@@ -1,29 +1,30 @@
 package model.entities;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+
 import java.util.Objects;
+import java.util.Date;
 
 public class Seller implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String name;
 	private String email;
-	private LocalDate birthDate;
+	private Date birthDate;
 	private Double salary;
 	
-	private Department deprtament;
+	private Department department;
 	
 	public Seller() {
 	}
 
-	public Seller(Integer id, String name, String email, LocalDate birthDate, Double salary, Department deprtament) {
+	public Seller(Integer id, String name, String email, Date birthDate, Double salary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
 		this.salary = salary;
-		this.deprtament = deprtament;
+		this.department = department;
 	}
 
 	public Integer getId() {
@@ -50,11 +51,11 @@ public class Seller implements Serializable{
 		this.email = email;
 	}
 
-	public LocalDate getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(LocalDate birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -66,12 +67,12 @@ public class Seller implements Serializable{
 		this.salary = salary;
 	}
 
-	public Department getDeprtament() {
-		return deprtament;
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setDeprtament(Department deprtament) {
-		this.deprtament = deprtament;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	public static long getSerialversionuid() {
@@ -81,12 +82,12 @@ public class Seller implements Serializable{
 	@Override
 	public String toString() {
 		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", salary="
-				+ salary + ", deprtament=" + deprtament + "]";
+				+ salary + ", department=" + department + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(birthDate, deprtament, email, id, name, salary);
+		return Objects.hash(birthDate, department, email, id, name, salary);
 	}
 
 	@Override
@@ -98,7 +99,7 @@ public class Seller implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		return Objects.equals(birthDate, other.birthDate) && Objects.equals(deprtament, other.deprtament)
+		return Objects.equals(birthDate, other.birthDate) && Objects.equals(department, other.department)
 				&& Objects.equals(email, other.email) && Objects.equals(id, other.id)
 				&& Objects.equals(name, other.name) && Objects.equals(salary, other.salary);
 	}
