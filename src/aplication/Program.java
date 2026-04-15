@@ -35,10 +35,17 @@ public class Program {
 			IO.println(seller2);
 		}
 		
-		IO.println("\n======= TEST 4: Insert =======");
+		IO.println("\n======= TEST 4: seller Insert =======");
 		/*Seller obj = new Seller(null, "Layne Stanley", "aliceinchains@gmail.com", new Date(), 4000.00, dep);
 		sellerDao.insert(obj);
 		System.out.println("Returned id: "+ obj.getId());*/
+		
+		IO.println("\n======= TEST 4: seller update =======");
+		seller = sellerDao.findById(2);
+		seller.setSalary(3300.0);
+		sellerDao.update(seller);
+		System.out.println("Updated");
+
 	}
 
 }
