@@ -1,7 +1,7 @@
 package aplication;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -40,12 +40,19 @@ public class Program {
 		sellerDao.insert(obj);
 		System.out.println("Returned id: "+ obj.getId());*/
 		
-		IO.println("\n======= TEST 4: seller update =======");
+		IO.println("\n======= TEST 5: seller update =======");
 		seller = sellerDao.findById(2);
 		seller.setSalary(3300.0);
 		sellerDao.update(seller);
 		System.out.println("Updated");
 
+		
+		IO.println("\n======= TEST 6: seller update =======");
+		IO.print("Digite um id: ");
+		Scanner sc = new Scanner(System.in);
+		int id = sc.nextInt();
+		sellerDao.deleteById(id);
+		IO.println("Delete complete");
 	}
 
 }
